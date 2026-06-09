@@ -4,9 +4,8 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <meta name="description" content="Mid-Tier Photographer Trends: 68M segment analysis, competitive landscape, marketing strategies, and product opportunity. 2022-2026.">
+  <meta name="description" content="Mid-Tier Photographer Trends Dashboard · MRI-Simmons audience analysis · 2022–2026">
   <meta property="og:title" content="Mid-Tier Photographer Trends Dashboard">
-  <meta property="og:description" content="Market research synthesis: competitive analysis, marketing strategies, and opportunity mapping.">
   <meta property="og:type" content="website">
   <meta name="robots" content="noindex, nofollow">
   <title>Mid-Tier Photographer Trends Dashboard</title>
@@ -474,6 +473,50 @@
   }
   .insight-mktg strong { color: #0369a1; font-weight: 600; }
 
+  /* ── Simmons / Audience section ── */
+  .simmons-def {
+    background: var(--surface2); border: 1px solid var(--border);
+    border-radius: var(--radius-sm); padding: 12px 16px;
+    font-size: 0.72rem; font-family: 'SF Mono', 'Fira Code', monospace;
+    color: var(--secondary); line-height: 1.7; overflow-x: auto;
+  }
+  .simmons-def .kw  { color: var(--accent); font-weight: 600; }
+  .simmons-def .val { color: #0a7a5a; }
+
+  .index-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+  .index-table thead th {
+    font-size: 0.65rem; font-weight: 600; color: var(--secondary);
+    text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 6px 10px 8px; text-align: left;
+    border-bottom: 2px solid var(--divider);
+  }
+  .index-table thead th.right { text-align: right; }
+  .index-table tbody td {
+    padding: 8px 10px; border-bottom: 1px solid var(--divider);
+    vertical-align: middle;
+  }
+  .index-table tbody tr:last-child td { border-bottom: none; }
+  .index-table .attr  { font-size: 0.8rem; color: var(--text); font-weight: 500; }
+  .index-table .proj  { font-size: 0.78rem; color: var(--secondary); text-align: right; }
+  .index-table .vpct  { font-size: 0.78rem; color: var(--secondary); text-align: right; }
+  .index-pill {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-width: 38px; padding: 2px 8px; border-radius: 8px;
+    font-size: 0.73rem; font-weight: 700; float: right;
+  }
+  .ip-high  { background: #e8f1fd; color: var(--accent); }
+  .ip-mid   { background: var(--green-bg); color: #1a7a3f; }
+  .ip-low   { background: var(--orange-bg); color: #b05c00; }
+  .ip-under { background: var(--red-bg); color: var(--red); }
+
+  .insight-simmons {
+    background: #f5f0ff; border: 1px solid #d8c8f8;
+    border-radius: var(--radius); padding: 18px 22px;
+    font-size: 0.84rem; line-height: 1.65; color: #2d1a5c;
+    display: flex; gap: 12px; align-items: flex-start;
+  }
+  .insight-simmons strong { color: var(--purple); font-weight: 600; }
+
   /* ── Opportunity Insight ── */
   .insight-opportunity {
     background: #f5f0ff;
@@ -581,132 +624,42 @@
     .col-8, .col-7, .col-6, .col-5, .col-4 { grid-column: span 12; }
   }
 </style>
-
 <style id="ph-gate-style">
-  #ph-gate {
-    position: fixed; inset: 0; z-index: 99999;
-    background: #f2f2f7;
-    display: flex; align-items: center; justify-content: center;
-    font-family: -apple-system, "SF Pro Display", "Helvetica Neue", sans-serif;
-    -webkit-font-smoothing: antialiased;
-    transition: opacity 0.25s ease;
-  }
-  #ph-gate.unlocking { opacity: 0; pointer-events: none; }
-  .ph-card {
-    background: #fff;
-    border: 1px solid #e0e0e8;
-    border-radius: 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,.06), 0 12px 32px rgba(0,0,0,.09);
-    padding: 44px 48px 38px;
-    width: 100%; max-width: 390px;
-    display: flex; flex-direction: column; align-items: center;
-  }
-  .ph-icon {
-    width: 58px; height: 58px; border-radius: 16px;
-    background: #e8f1fd;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.65rem; margin-bottom: 20px;
-  }
-  .ph-title {
-    font-size: 1.05rem; font-weight: 700; color: #1c1c1e;
-    text-align: center; letter-spacing: -0.3px; margin-bottom: 5px;
-  }
-  .ph-sub {
-    font-size: 0.78rem; color: #636366;
-    text-align: center; line-height: 1.45; margin-bottom: 28px;
-  }
-  .ph-input {
-    width: 100%; padding: 11px 14px;
-    border: 1.5px solid #e0e0e8; border-radius: 10px;
-    font-size: 0.96rem; font-family: inherit; color: #1c1c1e;
-    background: #fafafa; outline: none;
-    transition: border-color 0.15s, background 0.15s;
-    box-sizing: border-box; margin-bottom: 12px;
-    letter-spacing: 0.05em;
-  }
-  .ph-input:focus  { border-color: #0071e3; background: #fff; }
-  .ph-input.shake  { animation: ph-shake 0.4s ease; border-color: #ff3b30; }
-  @keyframes ph-shake {
-    0%,100%{transform:translateX(0)}
-    20%    {transform:translateX(-6px)}
-    40%    {transform:translateX(6px)}
-    60%    {transform:translateX(-4px)}
-    80%    {transform:translateX(4px)}
-  }
-  .ph-btn {
-    width: 100%; padding: 12px;
-    background: #0071e3; color: #fff;
-    border: none; border-radius: 10px;
-    font-size: 0.92rem; font-weight: 600; font-family: inherit;
-    cursor: pointer; transition: background 0.15s; margin-bottom: 10px;
-  }
-  .ph-btn:hover  { background: #0077ee; }
-  .ph-btn:active { background: #005bbf; }
-  .ph-err {
-    font-size: 0.74rem; color: #ff3b30;
-    text-align: center; min-height: 17px;
-  }
-  .ph-footer {
-    margin-top: 22px;
-    font-size: 0.65rem; color: #c7c7cc; text-align: center; line-height: 1.5;
-  }
-</style>
-</head>
-<body>
-<div id="ph-gate">
-  <div class="ph-card">
-    <div class="ph-icon">📷</div>
-    <div class="ph-title">Mid-Tier Photographer Trends</div>
-    <div class="ph-sub">Market Research Dashboard · 2022–2026<br>Enter password to access</div>
-    <input id="ph-pwd" class="ph-input" type="password" placeholder="Password"
-           autocomplete="current-password" aria-label="Dashboard password">
-    <button class="ph-btn" id="ph-btn">Access Dashboard →</button>
-    <div class="ph-err" id="ph-err" aria-live="polite"></div>
-    <div class="ph-footer">Mid-Tier Photographer Trends Dashboard<br>Enchanté · Apple AI for Devs Community</div>
-  </div>
-</div>
+  #ph-gate{position:fixed;inset:0;z-index:99999;background:#f2f2f7;display:flex;align-items:center;justify-content:center;font-family:-apple-system,"SF Pro Display","Helvetica Neue",sans-serif;-webkit-font-smoothing:antialiased;transition:opacity .25s ease}
+  #ph-gate.unlocking{opacity:0;pointer-events:none}
+  .ph-card{background:#fff;border:1px solid #e0e0e8;border-radius:20px;box-shadow:0 2px 8px rgba(0,0,0,.06),0 12px 32px rgba(0,0,0,.09);padding:44px 48px 38px;width:100%;max-width:390px;display:flex;flex-direction:column;align-items:center}
+  .ph-icon{width:58px;height:58px;border-radius:16px;background:#e8f1fd;display:flex;align-items:center;justify-content:center;font-size:1.65rem;margin-bottom:20px}
+  .ph-title{font-size:1.05rem;font-weight:700;color:#1c1c1e;text-align:center;letter-spacing:-.3px;margin-bottom:5px}
+  .ph-sub{font-size:.78rem;color:#636366;text-align:center;line-height:1.45;margin-bottom:28px}
+  .ph-input{width:100%;padding:11px 14px;border:1.5px solid #e0e0e8;border-radius:10px;font-size:.96rem;font-family:inherit;color:#1c1c1e;background:#fafafa;outline:none;transition:border-color .15s,background .15s;box-sizing:border-box;margin-bottom:12px;letter-spacing:.05em}
+  .ph-input:focus{border-color:#0071e3;background:#fff}
+  .ph-input.shake{animation:ph-shake .4s ease;border-color:#ff3b30}
+  @keyframes ph-shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
+  .ph-btn{width:100%;padding:12px;background:#0071e3;color:#fff;border:none;border-radius:10px;font-size:.92rem;font-weight:600;font-family:inherit;cursor:pointer;transition:background .15s;margin-bottom:10px}
+  .ph-btn:hover{background:#0077ee}.ph-btn:active{background:#005bbf}
+  .ph-err{font-size:.74rem;color:#ff3b30;text-align:center;min-height:17px}
+  .ph-footer{margin-top:22px;font-size:.65rem;color:#c7c7cc;text-align:center;line-height:1.5}
+</style></head>
+<body><div id="ph-gate"><div class="ph-card">
+  <div class="ph-icon">📷</div>
+  <div class="ph-title">Mid-Tier Photographer Trends</div>
+  <div class="ph-sub">Market Research Dashboard · 2022–2026<br>Enter password to access</div>
+  <input id="ph-pwd" class="ph-input" type="password" placeholder="Password" autocomplete="current-password">
+  <button class="ph-btn" id="ph-btn">Access Dashboard →</button>
+  <div class="ph-err" id="ph-err"></div>
+  <div class="ph-footer">Enchanté · Apple AI for Devs Community</div>
+</div></div>
 <script>
-(function() {
-  var HASH = 'e7cf3ef4f17c3999a94f2c6f612e8a888e5b1026878e4e19398b23bd38ec221a';
-  var KEY  = 'ph-dash-auth';
-  var gate = document.getElementById('ph-gate');
-
-  if (sessionStorage.getItem(KEY) === '1') { gate.style.display = 'none'; return; }
-
-  async function hashPwd(p) {
-    var buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(p));
-    return Array.from(new Uint8Array(buf)).map(function(b){return b.toString(16).padStart(2,'0')}).join('');
-  }
-
-  function attempt() {
-    var pwd = document.getElementById('ph-pwd').value;
-    var inp = document.getElementById('ph-pwd');
-    var err = document.getElementById('ph-err');
-    if (!pwd) { inp.focus(); return; }
-    hashPwd(pwd).then(function(h) {
-      if (h === HASH) {
-        sessionStorage.setItem(KEY, '1');
-        gate.classList.add('unlocking');
-        setTimeout(function() { gate.style.display = 'none'; }, 280);
-      } else {
-        err.textContent = 'Incorrect password — please try again.';
-        inp.classList.add('shake');
-        inp.value = '';
-        setTimeout(function() { inp.classList.remove('shake'); err.textContent = ''; }, 1400);
-        inp.focus();
-      }
-    });
-  }
-
-  document.getElementById('ph-btn').addEventListener('click', attempt);
-  document.getElementById('ph-pwd').addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') attempt();
-  });
-  window.addEventListener('DOMContentLoaded', function() { inp.focus(); });
+(function(){
+  var HASH='e7cf3ef4f17c3999a94f2c6f612e8a888e5b1026878e4e19398b23bd38ec221a',KEY='ph-dash-auth',gate=document.getElementById('ph-gate');
+  if(sessionStorage.getItem(KEY)==='1'){gate.style.display='none';return;}
+  async function hashPwd(p){var buf=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(p));return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');}
+  function attempt(){var pwd=document.getElementById('ph-pwd').value,inp=document.getElementById('ph-pwd'),err=document.getElementById('ph-err');if(!pwd){inp.focus();return;}hashPwd(pwd).then(h=>{if(h===HASH){sessionStorage.setItem(KEY,'1');gate.classList.add('unlocking');setTimeout(()=>gate.style.display='none',280);}else{err.textContent='Incorrect password — please try again.';inp.classList.add('shake');inp.value='';setTimeout(()=>{inp.classList.remove('shake');err.textContent='';inp.focus();},1400);}});}
+  document.getElementById('ph-btn').addEventListener('click',attempt);
+  document.getElementById('ph-pwd').addEventListener('keydown',e=>{if(e.key==='Enter')attempt();});
   document.getElementById('ph-pwd').focus();
 })();
-</script>
-
+</script><div style="background:#0071e3;padding:10px 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;font-family:-apple-system,'SF Pro Text',sans-serif;"><div style="display:flex;align-items:center;gap:12px;"><span style="font-size:1rem;">📷</span><div><div style="color:#fff;font-size:.82rem;font-weight:600;">Mid-Tier Photographer Trends Dashboard</div><div style="color:rgba(255,255,255,.7);font-size:.7rem;">Market Research Synthesis · 2022–2026 · Enchanté / Apple AI for Devs Community</div></div></div><button onclick="window.print()" style="background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;padding:5px 14px;border-radius:8px;cursor:pointer;font-size:.75rem;font-family:inherit;font-weight:500;">🖨 Print / Save PDF</button></div>
 
 <header>
   <div class="header-left">
@@ -1583,6 +1536,126 @@
     </div>
   </div>
 
+  <!-- ════════════════════════════════════════════════════
+       SECTION: Simmons Audience Profile
+       ════════════════════════════════════════════════════ -->
+  <div class="section-divider">
+    <span class="section-divider-label">MRI-Simmons Audience Profile · 5.1M US Adults</span>
+    <div class="section-divider-line"></div>
+  </div>
+
+  <!-- ── Audience Definition ── -->
+  <div class="card col-12">
+    <div class="card-header">
+      <h2>Audience Definition</h2>
+      <p class="subtitle">MRI-Simmons 2025 Winter USA · n = 51,666 universe respondents · All rows statistically reliable (min n=302, max CI ±1.7%)</p>
+    </div>
+    <div class="divider"></div>
+    <div class="simmons-def">
+      <span class="kw">( </span>Photographer Level: <span class="val">Amateur</span> <span class="kw">OR</span> <span class="val">Advanced Amateur</span> <span class="kw">OR</span> <span class="val">Professional</span><span class="kw"> )</span><br>
+      <span class="kw">AND ( </span>Camera Brand: <span class="val">Canon</span> <span class="kw">OR</span> <span class="val">Fujifilm</span> <span class="kw">OR</span> <span class="val">GoPro</span> <span class="kw">OR</span> <span class="val">Kodak</span> <span class="kw">OR</span> <span class="val">Nikon</span> <span class="kw">OR</span> <span class="val">Panasonic</span> <span class="kw">OR</span> <span class="val">Polaroid</span> <span class="kw">OR</span> <span class="val">Sony</span> <span class="kw">OR</span> <span class="val">Other</span> personally own<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">OR</span> Mobile Phone/Tablet Camera <span class="val">personally used in last 30 days</span><span class="kw"> )</span><br>
+      <span class="kw">AND ( </span>Edited photos: <span class="val">using software</span> <span class="kw">OR</span> <span class="val">online or with app</span><span class="kw"> )</span><br>
+      <span class="kw">AND</span> Self-concept: <span class="val">CREATIVE — imaginative, artistic</span> (Any Agree)
+    </div>
+  </div>
+
+  <!-- ── Platform Over-Index ── -->
+  <div class="card col-7">
+    <div class="card-header">
+      <h2>Platform Usage — Index vs. US Adults</h2>
+      <p class="subtitle">All rows statistically reliable · Index 100 = average · Source: MRI-Simmons 2025 Winter</p>
+    </div>
+    <div class="divider"></div>
+    <canvas id="platformIndexChart" height="260"></canvas>
+  </div>
+
+  <!-- ── Social + Content Behavior ── -->
+  <div class="card col-5">
+    <div class="card-header">
+      <h2>Social Media Behavior</h2>
+      <p class="subtitle">% of 5.1M audience + index · MRI-Simmons 2025 Winter</p>
+    </div>
+    <div class="divider"></div>
+    <table class="index-table">
+      <thead>
+        <tr>
+          <th>Attitude / Behavior</th>
+          <th class="right">V%</th>
+          <th class="right">Index</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="attr">I like to post updates about my life</td><td class="vpct">33.4%</td><td><span class="index-pill ip-high">126</span></td></tr>
+        <tr><td class="attr">I enjoy sharing content (photos, videos, etc.)</td><td class="vpct">52.0%</td><td><span class="index-pill ip-high">116</span></td></tr>
+        <tr><td class="attr">I like to create videos to share</td><td class="vpct">22.6%</td><td><span class="index-pill ip-high">113</span></td></tr>
+        <tr><td class="attr">Without social media, I'd feel less connected</td><td class="vpct">54.0%</td><td><span class="index-pill ip-mid">115</span></td></tr>
+        <tr><td class="attr">I often comment on others' posts</td><td class="vpct">37.4%</td><td><span class="index-pill ip-mid">104</span></td></tr>
+        <tr><td class="attr">I prefer reading others' comments to posting</td><td class="vpct">70.2%</td><td><span class="index-pill ip-mid">106</span></td></tr>
+        <tr><td class="attr">Posted picture/video to social (last 30 days)</td><td class="vpct">42.6%</td><td><span class="index-pill ip-mid">123</span></td></tr>
+        <tr><td class="attr">Used a filter on a photo (last 30 days)</td><td class="vpct">9.9%</td><td><span class="index-pill ip-mid">127</span></td></tr>
+        <tr><td class="attr">Easily swayed by others' opinions ⬇</td><td class="vpct">14.3%</td><td><span class="index-pill ip-under">72</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ── Podcast Index ── -->
+  <div class="card col-6">
+    <div class="card-header">
+      <h2>Podcast Consumption</h2>
+      <p class="subtitle">Index vs. US adults · 40% of audience listen monthly (K=122)</p>
+    </div>
+    <div class="divider"></div>
+    <canvas id="podcastIndexChart" height="230"></canvas>
+  </div>
+
+  <!-- ── Psychographic Attitudes ── -->
+  <div class="card col-6">
+    <div class="card-header">
+      <h2>Psychographic Profile</h2>
+      <p class="subtitle">Self-reported attitudes · % agreeing + index vs. US adults</p>
+    </div>
+    <div class="divider"></div>
+    <table class="index-table">
+      <thead>
+        <tr>
+          <th>Attitude</th>
+          <th class="right">V%</th>
+          <th class="right">Index</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="attr">Interested in learning just for fun</td><td class="vpct">94.1%</td><td><span class="index-pill ip-mid">114</span></td></tr>
+        <tr><td class="attr">Like to challenge myself with new things</td><td class="vpct">83.2%</td><td><span class="index-pill ip-mid">115</span></td></tr>
+        <tr><td class="attr">Think of myself as an intellectual</td><td class="vpct">76.0%</td><td><span class="index-pill ip-mid">115</span></td></tr>
+        <tr><td class="attr">Music is an important part of my life</td><td class="vpct">84.8%</td><td><span class="index-pill ip-mid">109</span></td></tr>
+        <tr><td class="attr">Actively seek out new music &amp; artists</td><td class="vpct">33.2%</td><td><span class="index-pill ip-mid">116</span></td></tr>
+        <tr><td class="attr">Would like to set up my own business</td><td class="vpct">49.4%</td><td><span class="index-pill ip-mid">111</span></td></tr>
+        <tr><td class="attr">Often do things on the spur of the moment</td><td class="vpct">57.8%</td><td><span class="index-pill ip-mid">107</span></td></tr>
+        <tr><td class="attr">Visited / wrote a blog (last 30 days)</td><td class="vpct">15.5%</td><td><span class="index-pill ip-high">143</span></td></tr>
+        <tr><td class="attr">Easily swayed by others ⬇</td><td class="vpct">14.3%</td><td><span class="index-pill ip-under">72</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ── Photography Frequency ── -->
+  <div class="card col-12">
+    <div class="card-header">
+      <h2>Photography Practice Frequency</h2>
+      <p class="subtitle">How often this audience engages in photography as a leisure activity · Index vs. US adults · All cells statistically reliable</p>
+    </div>
+    <div class="divider"></div>
+    <canvas id="photoFreqChart" height="100"></canvas>
+  </div>
+
+  <!-- ── Simmons Insight ── -->
+  <div class="insight-simmons col-12">
+    <div class="insight-icon">🔬</div>
+    <div>
+      <strong>Simmons Audience Read:</strong> This 5.1M audience is a <strong>self-directed, intellectually curious creative</strong> — not easily swayed (K=72), actively publishing (K=126 for posting updates), and deeply embedded in niche creative communities (Vimeo K=178, Flickr K=158, BeReal K=154). They over-index on Arts/Culture podcasts (K=158) and blog creation (K=141), confirming depth of creative engagement beyond photography alone. The K=446 on photography 2–3×/month is the highest non-definitional index in the file — this audience doesn't just own cameras, they <strong>actively practice</strong> photography as a craft. Every finding in this section is statistically reliable (minimum n=302, maximum confidence interval ±1.7%).
+    </div>
+  </div>
+
 </div>
 
 <footer>
@@ -1608,6 +1681,7 @@ const COLORS = {
   brown:  '#a2845e',
 };
 const PALETTE = Object.values(COLORS);
+const MID = '#636366';
 
 // ── 1. Market Share (Horizontal Bar) ────────────────────────────────────────
 new Chart(document.getElementById('marketShareChart'), {
@@ -2507,6 +2581,150 @@ new Chart(document.getElementById('positioningChart'), {
       });
     }
   }]
+});
+// ── 22. Platform Index Chart ─────────────────────────────────────────────────
+new Chart(document.getElementById('platformIndexChart'), {
+  type: 'bar',
+  data: {
+    labels: [
+      'Vimeo', 'Flickr', 'BeReal', 'Tumblr', 'Threads',
+      'LinkedIn', 'Reddit', 'Pinterest', 'Instagram',
+      'X / Twitter', 'Snapchat', 'TikTok', 'YouTube', 'Facebook'
+    ],
+    datasets: [{
+      label: 'Index vs. US Adults',
+      data: [178, 158, 154, 154, 140, 138, 132, 130, 117, 119, 112, 106, 109, 105],
+      backgroundColor: [
+        COLORS.purple, COLORS.blue, COLORS.red, COLORS.brown, COLORS.teal,
+        COLORS.indigo, COLORS.orange, COLORS.pink, COLORS.pink,
+        '#8e8e93', COLORS.teal, COLORS.red, COLORS.red, COLORS.blue,
+      ],
+      borderRadius: 5,
+      borderSkipped: false,
+    }, {
+      label: 'US Average (100)',
+      data: Array(14).fill(100),
+      type: 'line',
+      borderColor: COLORS.red,
+      borderWidth: 1.5,
+      borderDash: [4, 3],
+      pointRadius: 0,
+      fill: false,
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true,
+    plugins: {
+      legend: { position: 'bottom', labels: { boxWidth: 10, padding: 14, usePointStyle: true, pointStyle: 'circle', font: { size: 11 } } },
+      tooltip: { callbacks: { label: c => c.dataset.type === 'line' ? '  US Average = 100' : `  K=${c.raw} vs. US adults (n confirmed reliable)` } }
+    },
+    scales: {
+      x: { grid: { color: grid }, border: { display: false }, min: 90, max: 195, ticks: { callback: v => v } },
+      y: { grid: { display: false }, border: { display: false } }
+    }
+  }
+});
+
+// ── 23. Podcast Index Chart ───────────────────────────────────────────────────
+new Chart(document.getElementById('podcastIndexChart'), {
+  type: 'bar',
+  data: {
+    labels: [
+      'Arts / Culture', 'News / Current Events', 'Technology',
+      'Health / Fitness / Lifestyle', 'Entertainment / Pop Culture',
+      'Comedy', 'Crime / Investigative', 'Music', 'Sports'
+    ],
+    datasets: [{
+      label: 'Index vs. US Adults',
+      data: [158, 143, 140, 129, 126, 128, 118, 117, 106],
+      backgroundColor: [
+        COLORS.purple, COLORS.blue, COLORS.teal,
+        COLORS.green, COLORS.orange,
+        COLORS.indigo, COLORS.red, COLORS.brown, '#c7c7cc'
+      ],
+      borderRadius: 5,
+      borderSkipped: false,
+    }, {
+      label: 'US Average (100)',
+      data: Array(9).fill(100),
+      type: 'line',
+      borderColor: COLORS.red,
+      borderWidth: 1.5,
+      borderDash: [4, 3],
+      pointRadius: 0,
+      fill: false,
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true,
+    plugins: {
+      legend: { position: 'bottom', labels: { boxWidth: 10, padding: 14, usePointStyle: true, pointStyle: 'circle', font: { size: 11 } } },
+      tooltip: { callbacks: { label: c => c.dataset.type === 'line' ? '  US Average = 100' : `  K=${c.raw}` } }
+    },
+    scales: {
+      x: { grid: { color: grid }, border: { display: false }, min: 90, max: 175, ticks: { callback: v => v } },
+      y: { grid: { display: false }, border: { display: false } }
+    }
+  }
+});
+
+// ── 24. Photography Frequency ─────────────────────────────────────────────────
+new Chart(document.getElementById('photoFreqChart'), {
+  type: 'bar',
+  data: {
+    labels: [
+      'Participated last 12 months',
+      '2+ times/week',
+      'Once a week',
+      '2–3 times/month',
+      'Once a month',
+      'Less than once a month'
+    ],
+    datasets: [
+      {
+        label: 'Index vs. US Adults',
+        data: [350, 407, 424, 446, 373, 295],
+        backgroundColor: [COLORS.blue, COLORS.purple, COLORS.purple, COLORS.purple, COLORS.teal, COLORS.teal],
+        borderRadius: 5,
+        borderSkipped: false,
+        yAxisID: 'y',
+      },
+      {
+        label: '% of Audience',
+        data: [38.1, 13.5, 6.4, 7.5, 4.5, 3.9],
+        backgroundColor: 'transparent',
+        borderColor: COLORS.orange,
+        borderWidth: 2,
+        type: 'line',
+        pointBackgroundColor: COLORS.orange,
+        pointRadius: 5,
+        yAxisID: 'y2',
+        tension: 0.3,
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { position: 'bottom', labels: { boxWidth: 10, padding: 14, usePointStyle: true, pointStyle: 'circle', font: { size: 11 } } },
+      tooltip: {
+        callbacks: {
+          label: c => c.dataset.label === '% of Audience'
+            ? `  ${c.raw}% of 5.1M audience`
+            : `  K=${c.raw} — ${c.raw}× more likely than avg US adult`
+        }
+      }
+    },
+    scales: {
+      x:  { grid: { color: grid }, border: { display: false } },
+      y:  { grid: { color: grid }, border: { display: false }, title: { display: true, text: 'Index', color: MID, font: { size: 10 } } },
+      y2: { position: 'right', grid: { display: false }, border: { display: false },
+            ticks: { callback: v => v + '%' },
+            title: { display: true, text: '% of Audience', color: COLORS.orange, font: { size: 10 } } }
+    }
+  }
 });
 </script>
 </body>
